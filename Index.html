@@ -23,4 +23,35 @@
     </style>
 </head>
 <body>
-    <di
+    <div id="logo">RawTxt</div>
+    <div id="textBox" contenteditable="true">Your text here</div>
+    <label for="fileName">File Name:</label>
+    <input type="text" id="fileName" placeholder="Enter file name">
+    <br>
+    <label for="expiry">File Expiry:</label>
+    <select id="expiry">
+        <option value="1">1 day</option>
+        <option value="3">3 days</option>
+        <option value="7">7 days</option>
+        <option value="14">14 days</option>
+        <option value="30">30 days</option>
+        <option value="permanent">Permanent</option>
+    </select>
+    <br>
+    <button onclick="createRawTxt()">Create RawTxt</button>
+
+    <script>
+        function createRawTxt() {
+            var textContent = document.getElementById('textBox').innerText;
+            var fileName = document.getElementById('fileName').value;
+            var expiry = document.getElementById('expiry').value;
+
+            // You should handle file creation and storage here
+            // For simplicity, we'll just generate a link to the GitHub Pages repository
+            var link = `https://clothclient.github.io/repository/${fileName}.txt`;
+
+            alert(`RawTxt created! Click the link to access: ${link}`);
+        }
+    </script>
+</body>
+</html>
